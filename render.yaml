@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: calm-darwin-app
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: MANUS_API_URL
+        value: https://api.groq.com/openai/v1
+      - key: MANUS_API_KEY
+        sync: false
